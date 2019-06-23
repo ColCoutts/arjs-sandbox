@@ -11,23 +11,22 @@
   <title>Document</title>
 </head>
 <body style='margin : 0px; overflow: hidden;'>
-	<!-- <a-scene embedded arjs='sourceType: webcam;'>
-      <a-assets>
+    <!-- <a-scene embedded arjs='sourceType: webcam;'> -->
+    <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250' >
+      <!-- <a-assets>
           <video crossOrigin="anonymous" id="vid" autoplay loop="true" type="video/mp4" src="./assets/video/Infused-Teaser-Instagram.mp4">
-      </a-assets>
-    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+      </a-assets> -->
+    <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
     <a-image position="0 0.5 0" rotation="-45 0 0" src="./assets/image/Grasse-Logo.png"></a-image>
     <a-video src="#vid" width="1.78" height="1" rotation="-45 0 0" play="true"></a-video>
 		<a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene> -->
   
-  <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250' >
 
     <a-assets >
        <video preload="auto"  id="vid" autoplay loop="true" crossorigin  webkit-playsinline playsinline controls>
           <source  type="video/mp4"  src="./assets/video/Infused-Teaser-Instagram.mp4">
           <h3>Error : Your browser does not support.</h3>
-         <!-- FOR NOTMAL VIDEO YOU CAN USE MP4 or WEBM BUT FOR ALPHA VIDEO YOU NEED TO USE .WEBM FORMAT-->
        </video>
     </a-assets>
 
@@ -40,6 +39,7 @@
     </a-marker> -->
     <!-- <a-entity camera></!-->
  </a-scene>
+
  <div class="footer">
     <div class="row">
        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
@@ -47,11 +47,11 @@
              <button onclick="vid.play()" class="btn btnskips">Play (CHROME)</button>
           </div>
        </div>
-       <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
           <div class="onebright">
              <button onclick="refreshpage()" class="btn btnskips">Refresh</button>
           </div>
-       </div> -->
+       </div>
     </div>
  </div>
  <style>

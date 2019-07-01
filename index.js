@@ -1,7 +1,8 @@
 var renderer,
     scene,
     camera,
-    container;
+    container,
+    loader;
 
 var arSource,
     arContext,
@@ -12,7 +13,7 @@ var
 
 init();
 
-function init(){
+function init() {
 
     container = document.getElementById('container');
 
@@ -28,12 +29,27 @@ function init(){
     scene.visible = false;
 
 
-    mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
-        color: 0xFF00FF,
-        transparent: true,
-        opacity: 0.5
-    }));
-    scene.add(mesh);
+    // mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
+    //     color: 0xFF00FF,
+    //     transparent: true,
+    //     opacity: 0.5
+    // }));
+    // scene.add(mesh);
+
+    loader = new THREE.ImageLoader();
+    loader.load(
+      './assets/image/Grasse-Logo.png',
+      function(image) {
+        var canvas = document.createElement( 'canvas' );
+		    var context = canvas.getContext( '2d' );
+		    context.drawImage( image, 100, 100 );
+      },
+      undefined,
+      function () {
+        console.error( 'An error happened.');
+      }
+    )
+    // scene.add(loader);
 
     arSource = new THREEx.ArToolkitSource({
         sourceType : 'webcam',
@@ -52,7 +68,7 @@ function init(){
 
     arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './assets/data/u4bi.patt',
+        patternUrl : './assets/data/test_marker.patt',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
@@ -85,6 +101,6 @@ function render(){
     arContext.update(arSource.domElement);
     scene.visible = camera.visible;
 
-    mesh.rotateX(.1);
+    // mesh.rotateX(.1);
 
 }          

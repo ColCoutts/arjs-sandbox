@@ -13,33 +13,16 @@
 <body style='margin : 0px; overflow: hidden;'>
     <!-- <a-scene embedded arjs='sourceType: webcam;'> -->
     <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250' >
-      <!-- <a-assets>
+      <a-assets>
           <video crossOrigin="anonymous" id="vid" autoplay loop="true" type="video/mp4" src="./assets/video/Infused-Teaser-Instagram.mp4">
-      </a-assets> -->
-    <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-    <a-image position="0 0.5 0" rotation="-45 0 0" src="./assets/image/Grasse-Logo.png"></a-image>
+      </a-assets>
+    <!-- <a-image position="0 0.5 0" rotation="-45 0 0" src="./assets/image/Grasse-Logo.png"></a-image> -->
     <a-video src="#vid" width="1.78" height="1" rotation="-45 0 0" play="true"></a-video>
-		<a-marker-camera preset='hiro'></a-marker-camera>
-  </a-scene> -->
-  
-
-    <a-assets >
-       <video preload="auto"  id="vid" autoplay loop="true" crossorigin  webkit-playsinline playsinline controls>
-          <source  type="video/mp4"  src="./assets/video/Infused-Teaser-Instagram.mp4">
-          <h3>Error : Your browser does not support.</h3>
-       </video>
-    </a-assets>
-
-    <!-- <a-video src="#vid" width="1.78" height="1" rotation="-45 0 0" play="true"></a-video> -->
-    <a-video src="#vid" width="3" height="2"  rotation="-45 0 0" material="transparent:true;" opacity=".75" play="true"></a-video>
-
-    <a-marker-camera preset='hiro'></a-marker-camera>
-  
-    <!-- <a-marker crossorigin="anonymous" id="memarker" type="pattern" url="./assets/marker/HIRO.jpg" vidhandler>
-       <a-plane  position='0 0.1 0' scale="2 2 2" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid'></a-plane>
-    </a-marker> -->
-    <!-- <a-entity camera></!-->
- </a-scene>
+      <a-marker-camera type= 'pattern' url='./assets/marker/contrast-marker.patt'></a-marker-camera>
+      <!-- <a-marker-camera type= 'pattern' url='./assets/marker/pattern-marker.patt'></a-marker-camera> -->
+      <a-marker type= 'pattern' url='./assets/marker/contrast-marker.patt'></a-marker>
+      <!-- <a-marker type= 'pattern' url='./assets/marker/pattern-marker.patt'></a-marker> -->
+  </a-scene>
 
  <div class="footer">
     <div class="row">

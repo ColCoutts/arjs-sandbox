@@ -12,22 +12,29 @@
 <body>
 
    <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250' >
-      <a-assets>
-         <video crossOrigin="anonymous" id="vid" autoplay loop="true" type="video/mp4" src="./assets/image/finalvideo/Infused.mp4">
-      </a-assets>
-
-      <a-video src="#vid" width="1.78" height="1" rotation="-90 0 0" play="true"></a-video>
-      <a-marker-camera type= 'pattern' url='./assets/image/finalpattern/Infused-Pattern.patt'></a-marker-camera>
-      <a-marker type= 'pattern' url='./assets/image/finalpattern/Infused-Pattern.patt'></a-marker>
-
-      <a-assets>
-         <video crossOrigin="anonymous" id="vid2" autoplay loop="true" type="video/mp4" src="./assets/image/finalvideo/Grasse-Smoke.mp4">
-      </a-assets>
       
-      <a-video src="#vid2" width="1.78" height="1" rotation="-90 0 0" play="true"></a-video>
-      <a-marker-camera type= 'pattern' url='./assets/image/finalpattern/Grasse-Pattern.patt'></a-marker-camera>
-      <a-marker type= 'pattern' url='./assets/image/finalpattern/Grasse-Pattern.patt'></a-marker>
+      <a-marker type='pattern' url='./assets/image/finalpattern/Infused-Pattern.patt'>
+         <a-assets>
+            <video crossOrigin="anonymous" id="vid" autoplay loop="true" type="video/mp4" src="./assets/image/finalvideo/Infused.mp4">
+         </a-assets>
+         
+         <a-video src="#vid" width="1.78" height="1" rotation="-90 0 0" play="true"></a-video>
+         <a-marker-camera type= 'pattern' url='./assets/image/finalpattern/Infused-Pattern.patt'></a-marker-camera>
+      </a-marker>
 
+      
+   </a-scene>
+   
+   <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250' >
+      <a-marker type='pattern' url='./assets/image/finalpattern/Grasse-Pattern.patt'>
+         <a-assets>
+            <video crossOrigin="anonymous" id="vid2" autoplay loop="true" type="video/mp4" src="./assets/image/finalvideo/Grasse-Smoke.mp4">
+         </a-assets>
+         
+         <a-video src="#vid2" width="1.78" height="1" rotation="-90 0 0" play="true"></a-video>
+         <a-marker-camera type= 'pattern' url='./assets/image/finalpattern/Grasse-Pattern.patt'></a-marker-camera>
+      </a-marker>
+      
    </a-scene>
 
 
